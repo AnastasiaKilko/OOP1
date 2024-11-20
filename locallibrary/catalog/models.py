@@ -64,6 +64,9 @@ class Author(models.Model):
     def __str__(self):
         return '%s, %s' % (self.last_name, self.first_name)
 
+    class Meta:
+        ordering = ['last_name']
+
 class Language(models.Model):
     name = models.CharField(max_length=100, unique=True,
                             help_text="Enter the book's natural language (e.g. English, French, Japanese etc.)")
